@@ -5,10 +5,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-const store = createXRStore()
+function ARBox() {
+  const [red, setRed] = useState(false)
+  return (
+    <XR>
+      <mesh pointerEventsType={{ deny: 'grab' }} onClick={() => setRed(!red)} position={[0, 1, -1]}>
+        <boxGeometry />
+        <meshBasicMaterial color={red ? 'red' : 'blue'} />
+      </mesh>
+    </XR>
+  )
+}
 
 export function App() {
-  const [red, setRed] = useState(false)
+  const store = createXRStore()
   return (
     <>
       <div>
@@ -23,12 +33,7 @@ export function App() {
       <button onClick={() => store.enterAR()}>Entra a AR</button>
       <div className="canvas-container">
         <Canvas>
-          <XR store={store}>
-            <mesh pointerEventsType={{ deny: 'grab' }} onClick={() => setRed(!red)} position={[0, 1, -1]}>
-              <boxGeometry />
-              <meshBasicMaterial color={red ? 'red' : 'blue'} />
-            </mesh>
-          </XR>
+          <ARBox />
         </Canvas>
       </div>
       <p className="read-the-docs">
