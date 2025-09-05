@@ -1,22 +1,17 @@
 import { Canvas } from '@react-three/fiber'
-import { XR, createXRStore } from '@react-three/xr'
-import { useState } from 'react'
-
-const store = createXRStore()
+import { XR } from '@react-three/xr'
 
 export default function App() {
-  const [red, setRed] = useState(false)
   return (
-    <>
-      <button onClick={() => store.enterAR()}>Enter AR</button>
+    <div style={{ width: '100vw', height: '100vh' }}>
       <Canvas>
-        <XR store={store}>
-          <mesh pointerEventsType={{ deny: 'grab' }} onClick={() => setRed(!red)} position={[0, 1, -1]}>
+        <XR>
+          <mesh position={[0, 1, -1]}>
             <boxGeometry />
-            <meshBasicMaterial color={red ? 'red' : 'blue'} />
+            <meshBasicMaterial color={'blue'} />
           </mesh>
         </XR>
       </Canvas>
-    </>
+    </div>
   )
 }
