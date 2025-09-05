@@ -20,7 +20,7 @@ export function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <button onClick={() => store.enterAR()}>Enter AR</button>
+      <button onClick={() => store.enterAR()}>Entra a AR</button>
       <Canvas>
         <XR store={store}>
           <mesh pointerEventsType={{ deny: 'grab' }} onClick={() => setRed(!red)} position={[0, 1, -1]}>
