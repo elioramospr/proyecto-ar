@@ -8,7 +8,7 @@ export function App() {
   const [red, setRed] = useState(false)
   return (
     <>
-      <button onClick={() => store.enterAR()}>Enter AR</button>
+      <button onClick={() => store.enterAR()}>Entrar a AR</button>
       <Canvas>
         <XR store={store}>
           <mesh pointerEventsType={{ deny: 'grab' }} onClick={() => setRed(!red)} position={[0, 1, -1]}>
