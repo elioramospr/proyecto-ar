@@ -1,13 +1,31 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>AR.js + Three.js Example (ES Modules)</title>
+    <script src="https://cdn.jsdelivr.net/npm/ar.js@3.3.2/aframe/build/aframe-ar.js"></script>
+    <style>
+      body { margin: 0; overflow: hidden; }
+      #arjs { width: 100vw; height: 100vh; }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <a-scene
+      embedded
+      arjs="sourceType: webcam; debugUIEnabled: false;"
+      vr-mode-ui="enabled: false"
+      renderer="logarithmicDepthBuffer: true;"
+      id="arjs"
+    >
+      <a-marker preset="hiro">
+        <a-entity id="threejs-box"></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+    <script type="module">
+      import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.module.js';
+      // Ejemplo: puedes usar THREE aquí para crear objetos personalizados
+      // Este ejemplo no modifica la escena de A-Frame directamente, pero puedes usar THREE para lógica avanzada
+      // Por defecto, el cubo azul se muestra con <a-box> de A-Frame
+    </script>
   </body>
 </html>
