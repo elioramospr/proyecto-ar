@@ -21,14 +21,16 @@ export function App() {
       </div>
       <h1>Vite + React</h1>
       <button onClick={() => store.enterAR()}>Entra a AR</button>
-      <Canvas>
-        <XR store={store}>
-          <mesh pointerEventsType={{ deny: 'grab' }} onClick={() => setRed(!red)} position={[0, 1, -1]}>
-            <boxGeometry />
-            <meshBasicMaterial color={red ? 'red' : 'blue'} />
-          </mesh>
-        </XR>
-      </Canvas>
+      <div className="canvas-container">
+        <Canvas>
+          <XR store={store}>
+            <mesh pointerEventsType={{ deny: 'grab' }} onClick={() => setRed(!red)} position={[0, 1, -1]}>
+              <boxGeometry />
+              <meshBasicMaterial color={red ? 'red' : 'blue'} />
+            </mesh>
+          </XR>
+        </Canvas>
+      </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
