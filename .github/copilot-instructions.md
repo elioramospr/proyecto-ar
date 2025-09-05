@@ -1,0 +1,5 @@
+- [x] Proyecto creado con Vite y React.
+- [x] Archivo App.jsx con ejemplo de XR y Canvas añadido.
+- [ ] Instalar dependencias: @react-three/fiber, @react-three/xr, three.
+- [ ] Verificar funcionamiento y compilar.
+- [ ] Crear README.md con instrucciones básicas.
